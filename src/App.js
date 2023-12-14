@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Cadastro from './componentes/CadastroCarro';
 
