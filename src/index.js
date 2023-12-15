@@ -3,13 +3,38 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Cadastro from './componentes/CadastroCarro';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Consulta from './componentes/consulta';
+import Editar from './componentes/Edicao';
 
+const rotas = createBrowserRouter([
+  {
+    path : "/",
+    element: <App/>,
+    children:[
+   {
+     path : "/carros/cadastrar",
+     element: <Cadastro/>,
+   },
+   {
+     path : "/carros/consultar",
+     element: <Consulta/>,
+   },
+   {
+     path : "/contatos/editar/:idContato",
+     element: <Editar/>,
+   },
+   
+  ]
+  }
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={rotas} />
   </React.StrictMode>
 );
 
