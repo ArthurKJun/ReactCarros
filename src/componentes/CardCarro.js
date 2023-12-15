@@ -12,9 +12,9 @@ export default function CardCarro(props) {
 
     return (
 
-        <div className="conatiner">
+        <div className="conatiner bg-info ">
 
-            <div className="card col-md-4">
+            <div className="card col-md-6">
 
                 <div className="card-body">
 
@@ -46,7 +46,7 @@ export default function CardCarro(props) {
                         </Link>
                         <button
                             onClick={excluir}
-                            className="btn btn-outline-primary"
+                            className="btn btn-danger"
                         >Excluir</button>
                     </div>
 
