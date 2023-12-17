@@ -44,6 +44,21 @@ export default function CardCarro(props) {
                         <span>{props.carros.ano}</span>
                     </div>
 
+                    <div className="card-text" >
+                        <span className="fw-bold">Placa: </span>
+                        <span>{props.carros.placa}</span>
+                    </div>
+
+                    <div className="card-text" >
+                        <span className="fw-bold">Chassis: </span>
+                        <span>{props.carros.chassi}</span>
+                    </div>
+
+                    <div className="card-text" >
+                        <span className="fw-bold">Renavam: </span>
+                        <span>{props.carros.renavam}</span>
+                    </div>
+
                     <div className="mt-3 d-flex justify-content-between">
                         <Link to={`/carros/editar/${props.carros.id}`}>
                             <button
