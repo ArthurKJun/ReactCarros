@@ -5,8 +5,7 @@ export default function Cadastro() {
     const [dono, setDono] = useState('')
     const [marca, setMarca] = useState('')
     const [modelo, setModelo] = useState('')
-    const [ano_fab, setAnofab] = useState('')
-    const [ano_mod, setAnoMod] = useState('')
+    const [ano, setAno] = useState('')    
     const [placa, setPlaca] = useState('')
     const [chassi, setChassi] = useState('')
     const [renavam, setRenavam] = useState('')
@@ -29,15 +28,10 @@ export default function Cadastro() {
             return
         }
 
-        if (ano_fab === '') {
+        if (ano === '') {
             alert('Informe o Ano de Fabricação')
             return
-        }
-
-        if (ano_mod === '') {
-            alert('Informe o Ano do Modelo')
-            return
-        }
+        }     
 
         if (placa === '') {
             alert('Informe a Placa')
@@ -54,7 +48,7 @@ export default function Cadastro() {
             return
         }
 
-        let obj = { dono, marca, modelo, ano_fab, ano_mod, placa, chassi, renavam }
+        let obj = { dono, marca, modelo, ano, placa, chassi, renavam }
 
         fetch('http://localhost:8080/carros',
             {
@@ -98,17 +92,9 @@ export default function Cadastro() {
             <input
                 className="form-control"
                 type="text"
-                placeholder="Informe o Ano de fabricação do veículo"
-                onChange={txt => setAnofab(txt.target.value)}
-            />
-
-            <label className="form-label">Informe o Ano do Modelo</label>
-            <input
-                className="form-control"
-                type="text"
-                placeholder="Informe o Ano de Modelo do veículo"
-                onChange={txt => setAnoMod(txt.target.value)}
-            />
+                placeholder="Informe o Ano do veículo"
+                onChange={txt => setAno(txt.target.value)}
+            />           
 
             <label className="form-label">Informe a Placa</label>
             <input

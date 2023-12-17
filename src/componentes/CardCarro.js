@@ -3,18 +3,19 @@ import { Link } from "react-router-dom"
 export default function CardCarro(props) {
 
     function excluir() {
-        fetch(`http://localhost:8080/contatos/${props.carros.id}`,
+        fetch(`http://localhost:8080/carros/${props.carros.id}`,
             {
                 method: 'DELETE'
             })
-            .then(x => alert('contato excluido com sucesso'))
+            .then(x => alert('Veículo excluido com sucesso'))
+            
     }
 
     return (
 
         <div className="conatiner bg-info ">
 
-            <div className="card col-md-6">
+            <div className="card col-md-4">
 
                 <div className="card-body">
 
@@ -38,8 +39,13 @@ export default function CardCarro(props) {
                         <span>{props.carros.modelo}</span>
                     </div>
 
+                    <div className="card-text" >
+                        <span className="fw-bold">Ano: </span>
+                        <span>{props.carros.ano}</span>
+                    </div>
+
                     <div className="mt-3 d-flex justify-content-between">
-                        <Link to={`/contatos/editar/${props.carros.id}`}>
+                        <Link to={`/carros/editar/${props.carros.id}`}>
                             <button
                                 className="btn btn-outline-primary"
                             >Editar</button>
@@ -52,6 +58,7 @@ export default function CardCarro(props) {
 
                 </div>
             </div>
+
         </div>
     )
 }
